@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en, sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tårta recipe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Satisfy'>
+</head>
+
+
+<body>
+    
+    <div id="container">
+    
+    <header>
+        Recept på Värmlandstårta
+    </header>
+    
+     <nav>
+           <a href="index.html" class="button" target="_parent">Home</a>
+            
+            <a href="recipe.html" class="button" target="_parent">Tårta Recept</a>
+            
+       </nav>
+    
+    
+    <aside>
+       <h3>Tid: ca. 1 timmer <br>Ingredienser för
+       
+       <input type="number" id="portion" min="1" max="10" onchange="calculateAmount()">
+       
+       portioner 
+       </h3>
+       
+<!--
+       <button type="button" onclick="clickButton();">ClickHere!
+       </button>
+       
+       <button type="reset" onclick="clickReset();">Reset Here!
+       </button>
+-->
+       
+        <h3>
+           Marängbotten
+        </h3>
+        <ul>   
+            <li><span id="amount">3</span>  äggvitor</li>
+            <li><span id="amount">2</span> msk kakao</li>    
+            <li><span id="amount">100</span> gram strösocker</li>
+            <li><span id="amount">35</span> gram hackade hasselnötter</li>
+            <li>rostade mandelspån</li>
+        </ul>
+         
+        <h3>
+           Kräm
+        </h3>
+        <ul>   
+            <li><span id="amount">3</span> äggulor</li>  <li><span id="amount">7.5</span> cl grädde</li>
+            <li><span id="amount">75</span> gram socker</li>
+            <li><span id="amount">100</span> gram rumsvarmt smör</li>          
+        </ul> 
+        
+    </aside>
+
+    <article class="home">         
+       <h3>
+         Så här gör man
+       </h3>
+        <ol>
+            <b>bottnarna:</b>
+            <li>Vispa äggvitorna hårt. Vänd ner dem i blandningen av socker, hackade hasselnötter och kakao. Smörj två plåtar och pudra dem med mjöl, eller ta bakplåtspapper. Rita upp två tallriksstora cirklar – en på varje plåt – och bred ut smeten ca 1 cm tjock.</li>
+            <li>Grädda bottnarna i 150 grader, som sänks mot slutet av gräddningen. Tiden är 30-35 minuter, tills marängen är hård. Lossa bottnarna medan de är varma och låt dem kallna.</li>
+            
+            <b>… och krämen:</b>
+            <li>Låt gulorna, sockret och grädden sjuda sakta tills det tjocknar i en kastrull. Vispa väl hela tiden. Låt svalna, rör sedan i smöret lite i taget.</li>
+            <li>Lägg samman bottnarna med smörkräm mellan och över. Gör mönster med en gaffel och strö rostade hasselnötter eller rostade mandelflisor över.</li>
+            
+        </ol>
+                             
+    </article>
+    
+    <section>
+
+        <div class="box">
+        <img src="image/v06.jpg" alt="imagev06">
+        
+       
+        <img src="image/v07.jpg" alt="imagev07">
+        
+        
+        <img src="image/v05.jpg" alt="imagev05">
+        
+        
+        <img src="image/v03.jpg" alt="imagev03">
+        
+        </div>
+        
+    </section>
+    
+    
+    <footer>
+        <small>&copy;2016 Kate SJK15</small>
+    </footer>
+    
+    </div>
+    
+    <script src="script.js"></script> 
+    
+</body>
+</html>
