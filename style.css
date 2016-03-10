@@ -5,14 +5,9 @@ body{
     color: saddlebrown;
 }
 
-/*
-    '#' refers to id (which id of same page)
-    '.' refers to class (which page of whole site)
-*/
-
 #container{
     width: 100%;
-    min-height: 800px;
+    min-height: 1000px;
     border: 0px solid black;
     margin-left: auto;
     margin-right: auto;
@@ -20,83 +15,99 @@ body{
     background-repeat: repeat;
 }
 
+#logo{
+    float: left;
+    padding-left: 120px;
+    clear: both;
+}
+
 header{
-    border-radius: 20px;
-    padding-top: 35px;
+    padding-top: 40px;
     margin-top: 2px;
     height: 100px;
     text-align: center;
     font-family: 'Satisfy', cursive;
-    font-size: 50px;
+    font-size: 60px;
     text-shadow: 0 -3px 2px white;
-    background-color: #C9D787; 
+    color: #9d4e15; 
 }
 
-
+#grad1 {  
+    background: #7D8A2E; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#7D8A2E, #C9D787); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#7D8A2E, #C9D787); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#7D8A2E, #C9D787); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#7D8A2E, #C9D787); /* Standard syntax (must be last) */
+}
+    
 nav{
-    border-radius: 10px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 5px;
     padding-right: 100px;
     height: 30px;
-    color: saddlebrown;
+    color: #9d4e15;
     text-align: right;
-    
     background-color: #7D8A2E;
+}
+
+#grad2 {
+    background: #C9D787; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#C9D787, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#C9D787, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#C9D787, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#C9D787, white); /* Standard syntax (must be last) */
 }
 
 .button {
     display:inline-block;
     height: 30px;
     width: 120px;
-    background: #FAC2AB;
-    color: saddlebrown;
+    padding-top: 5px;
     text-align:center;
-    
     font: bold 15px "Helvetica Neue", Arial,  Geneva, sans-serif;
     border-radius: 50px;
     box-shadow: 4px -2px 4px gray;
     text-shadow: 0 -2px 2px white;
 }
 
-
 article.home{
-    width: 80%;
+    width: 55%;
     height: auto;
     line-height: 1.5em;
     padding-left: 100px;
     padding-right:100px;
+    margin-left: 330px;
     text-align: justify;
     text-indent: 50px;
 }
 
-
+p::first-letter, h3::first-letter{
+    color:saddlebrown;
+    font-size: 30px;
+    font-family: 'Satisfy', cursive;
+    font-weight: 200;
+}
 
 aside{
     float: left;
     width: 25%;
-    height: 800px;
+    height: 850px;
     min-height: 50px;
     color: saddlebrown;
     padding-top: 15px;
     padding-left: 100px;
     padding-right: 35px;
-    
     background-color: #FAC2AB;
 }
 
-aside img{
+aside .myStars img{
     width: 40px;
     height: 40px;
 }
 
-
-
-
 #amount{
     color: darkorange;
-    font-weight: bold;
-    
+    font-weight: bold;    
 }
 
 section{
@@ -105,9 +116,14 @@ section{
     padding-left: 60px;
 }
 
+section img:hover{
+    position:relative;
+    width:500px;
+    height:auto;
+    z-index:999;    
+}
 
 div.box img{
-/*    clear: both;*/
     float: left;
     display:inline-block;
     width: 220px;
@@ -116,29 +132,37 @@ div.box img{
     border: 3px solid #7D8A2E;
 }
 
-
 footer{
     border-radius: 10px;
-    position: fixed;
-    bottom: 0;
-    width:90%;
+    width:85%;
+    height: 40px;
     clear: both;
-    color: #738071;;
-    height: 30px;
-    padding-top: 15px;
+    color: saddlebrown;
+    padding-top: 10px; 
     padding-left: 100px;
-    padding-right: 20px;
-    
+    padding-right: 50px;
     background-color: #FF8598;
 }
 
-/*
-#grad1 {
-  background: 7D8A2E ; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(top, #7D8A2E, #C9D787); // For Safari 5.1 to 6.0
-  background: -o-linear-gradient(top, #7D8A2E, #C9D787); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(top, #7D8A2E, #C9D787); // For Firefox 3.6 to 15 
-  background: linear-gradient(to bottom, #7D8A2E, #C9D787); // Standard syntax 
-}
-*/
+a:link    {color:saddlebrown; background-color:transparent; text-decoration:none}
+a:visited {color:saddlebrown; background-color:transparent; text-decoration:none}
+a:hover   {color:#7D8A2E; background-color:transparent; text-decoration:none}
+a:active  {color:saddlebrown; background-color:transparent; text-decoration:none}
 
+a.button:hover {
+    background: #FF8598;
+}
+
+/* Note:
+1)  '#' refers to id (which id of same page)
+    '.' refers to class (which page of whole site)
+
+2) color theme
+    #7D8A2E 
+    #C9D787
+    #FFFFFF
+    #FAC2AB
+    #FF8598  
+3) start credit to photos
+      <a href="http://www.freepik.com/free-vector/gold-stars-vector-icons_718684.htm">Designed by Freepik</a>
+*/

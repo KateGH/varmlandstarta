@@ -2,26 +2,33 @@
 <html lang="en, sv">
 
 <head>
+   
     <meta charset="UTF-8">
     <title>Värmlandstårta</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Satisfy'>
-    <script src="jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
 </head>
 
 <body>
 
     <div id="container">
       
-       <header>
-          Värmlandstårta
+       <header id="grad1">
+         
+         <div id="logo">
+            <a href="index.html"> <img src="image/logo02.png" alt="" style="width:80px;height:100px;"></a>    
+         </div>
+         
+         Värmlandstårta
            
        </header>
        
-       <nav>
-           <a href="index.html" class="button" target="_parent">Home</a>
+       <nav id="grad2">
+            <a href="index.html" class="button" target="_parent">Home</a>
             
             <a href="recipe.html" class="button" target="_parent">Tårta Recept</a>
             
@@ -29,26 +36,31 @@
 
       
        <aside>
-                   <img id="vt" src="image/v01.jpg" alt="" style="width:235px;height:250px;border-radius:15px;box-shadow:2px -2px 4px gray;"><br/><i> Rösta på Värmlandstårta</i>
+           
+            <img src="image/v01.jpg" alt="" style="width:235px;height:250px;border-radius:15px;box-shadow:2px 2px 4px gray;">
+            <br/>
                   
+            <div class="myStars">
                   
-                   <div class="myStars">
-                                                                                                                  
-                       <img id="star01" src="image/s05.png" alt="">
+                Betygsätt på Värmlandstårta<br/>
+                <img id="star01" onclick="loadPage()" src="image/s05.png" alt="">
+                    
+                <img id="star02" onclick="loadPage()" src="image/s05.png" alt="">
                        
-                       <img id="star02" 
-                       src="image/s05.png" alt="">
-                       
-                       <img id="star03" src="image/s05.png" alt="">
+                <img id="star03" onclick="loadPage()" src="image/s05.png" alt="">
                       
-                       <img id="star04" 
-                        src="image/s05.png" alt="">
+                <img id="star04" onclick="loadPage()" src="image/s05.png" alt="">
                        
-                       <img id="star05" 
-                        src="image/s05.png" alt="">
+                <img id="star05" onclick="loadPage()" src="image/s05.png" alt=""><br/><br/>
+                
+                Min röst: <span id="myvote">9</span><br/>
+                       
+                Total röster: <span id="votes">99</span><br/>
                    
-        
-                    </div>
+                Snittbetyg: <span id="rating">999</span>
+                
+                
+            </div>
                          
                    
         </aside> 
@@ -64,22 +76,40 @@
         </article>
        
         <footer>
+               
+                <span style="float: left">
                 <small>&copy;2016 Kate SJK15</small>
+                </span>
+                
+                <span style="float: right">
+            
+                <a href="https://www.facebook.com/">
+                <i class="fa fa-facebook-square fa-2x"></i>
+                </a>
+                
+                <a href="https://www.pinterest.com/">
+                <i class="fa fa-pinterest fa-2x"></i>
+                </a>
+                
+                <a href="https://twitter.com/">
+                <i class="fa fa-twitter fa-2x"></i>
+                </a>
+            
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram fa-2x"></i>
+                </a>
+                
+                <a href="https://www.youtube.com/">
+                <i class="fa fa-youtube fa-2x"></i></a>
+        
+                </span>
+            
         </footer>
                                 
-<!--7D8A2E 
-    C9D787
-    FFFFFF
-    FAC2AB
-    FF8598     
-     
-     start credit
-      <a href="http://www.freepik.com/free-vector/gold-stars-vector-icons_718684.htm">Designed by Freepik</a>
-     
-     -->                                           
+                                          
     </div>
     
     <script src="script.js"></script>  
 
 </body>
+
 </html>

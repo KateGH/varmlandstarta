@@ -169,6 +169,39 @@ $("#star05").click(function(){
   for(var i=1;i<=5;i++){
         $("#star0"+i).off("mouseout");
         $("#star0"+i).on("mouseover");    
-    }
-    
+    }    
 }); 
+
+
+
+
+//function loadPage(){
+//    var x = new XMLHttpRequest();
+//    x.open("get", "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta");
+//    x.onreadystatechange=function(){
+//        var content = document.getElementById("myvote");
+//        content.innerHTML = x.responseText;
+//    }
+//    x.send(null);
+//    
+//}
+
+
+function loadPage(){
+   $.ajax({
+    type: 'GET',
+    url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta", 
+    success: function(result){
+    console.log('success', result);
+    $("#myvote").HTML(result);
+            
+    }
+   });  
+}
+
+
+
+
+//0f69fc1a7bf82398 by Mi
+
+//GET https://edu.oscarb.se/sjk15/api/recipe/?api_key={api_key}&recipe={recipe_name}&rating={user_rating} 
