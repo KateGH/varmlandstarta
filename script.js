@@ -200,7 +200,7 @@ $.ajax({
           if(http_request.readyState == 4 && http_request.status == 200){
               var jsonObj = JSON.parse(http_request.responseText);
               $("#votes").html(jsonObj.votes);
-              $("#rating").html(jsonObj.rating);
+              $("#rating").html(jsonObj.rating.toFixed(2));
           }
       }
       
