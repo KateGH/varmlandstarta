@@ -44,6 +44,8 @@ $("#star01").mouseout(function(){
 
 $("#star01").click(function(){
     
+    $("#myvote").html(1);
+    
     $("#star01").off("mouseout");
     $("#star01").on("mouseover");
     
@@ -74,6 +76,8 @@ $("#star02").mouseout(function(){
 });
 
 $("#star02").click(function(){
+    
+    $("#myvote").html(2);
     
     for(var i=1;i<=2;i++){
         $("#star0"+i).off("mouseout");
@@ -107,6 +111,8 @@ $("#star03").mouseout(function(){
 
 $("#star03").click(function(){
     
+    $("#myvote").html(3);
+    
     for(var i=1;i<=3;i++){
         $("#star0"+i).off("mouseout");
         $("#star0"+i).on("mouseover");    
@@ -137,6 +143,8 @@ $("#star04").mouseout(function(){
 
 $("#star04").click(function(){
     
+    $("#myvote").html(4);
+    
     for(var i=1;i<=4;i++){
         $("#star0"+i).off("mouseout");
         $("#star0"+i).on("mouseover");    
@@ -166,6 +174,8 @@ $("#star05").mouseout(function(){
 
 $("#star05").click(function(){
     
+    $("#myvote").html(5);
+    
   for(var i=1;i<=5;i++){
         $("#star0"+i).off("mouseout");
         $("#star0"+i).on("mouseover");    
@@ -173,35 +183,30 @@ $("#star05").click(function(){
 }); 
 
 
-
-
-//function loadPage(){
-//    var x = new XMLHttpRequest();
-//    x.open("get", "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta");
-//    x.onreadystatechange=function(){
-//        var content = document.getElementById("myvote");
-//        content.innerHTML = x.responseText;
-//    }
-//    x.send(null);
-//    
-//}
-
+// here to fix vote function
 
 function loadPage(){
-   $.ajax({
-    type: 'GET',
-    url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta", 
-    success: function(result){
-    console.log('success', result);
-    $("#myvote").HTML(result);
-            
-    }
-   });  
+$.ajax({
+  url:"https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta&rating=5",
+  type: "GET",
+  success: function loadJSON(){
+      var data_file = "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta";
+      var http_request = new XMLHttpRequest();
+      
+      http_request.open("GET", data_file, true);
+      http_request.send();
+      
+      http_request.onreadystatchange = function(){
+          if(http_request.readyState == 4 && http_request.status == 200){
+              var jsonObj = JSON.parse(http_request.responseText);
+              $("#votes").html(jsonObj.votes);
+              $("#rating").html(jsonObj.rating);
+          }
+      }
+      
+  }
+    
+} );
+    
 }
 
-
-
-
-//0f69fc1a7bf82398 by Mi
-
-//GET https://edu.oscarb.se/sjk15/api/recipe/?api_key={api_key}&recipe={recipe_name}&rating={user_rating} 
