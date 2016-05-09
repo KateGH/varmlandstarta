@@ -196,7 +196,7 @@ $.ajax({
       http_request.open("GET", data_file, true);
       http_request.send();
       
-      http_request.onreadystatchange = function(){
+      http_request.onreadystatechange = function(){
           if(http_request.readyState == 4 && http_request.status == 200){
               var jsonObj = JSON.parse(http_request.responseText);
               $("#votes").html(jsonObj.votes);
