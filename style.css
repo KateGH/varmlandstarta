@@ -105,7 +105,7 @@ aside .myStars img{
     height: 40px;
 }
 
-#amount{
+.amount{
     color: darkorange;
     font-weight: bold;    
 }
@@ -123,13 +123,18 @@ section img:hover{
     z-index:999;    
 }
 
-div.box img{
+#imgv06 img{
     float: left;
     display:inline-block;
     width: 220px;
     height: 200px;
     margin: 1px;
     border: 3px solid #7D8A2E;
+}
+
+#imgv07 img{
+    float: left;
+    margin: 0 0 10px 10px;
 }
 
 footer{
@@ -152,6 +157,8 @@ a:active  {color:saddlebrown; background-color:transparent; text-decoration:none
 a.button:hover {
     background: #FF8598;
 }
+
+
 
 /* Note:
 1)  '#' refers to id (which id of same page)
