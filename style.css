@@ -123,7 +123,7 @@ aside .myStars img{
 /*    z-index:999;    */
 /*}*/
 
-.imgR img{
+.imgR.home img{
     float: right;
     width: 235px;
     height: 250px;
@@ -131,7 +131,7 @@ aside .myStars img{
     box-shadow:2px 2px 4px gray;
 }
 
-.imgL img{
+.imgL.home img{
     float: left;
     width:235px;
     height:250px;
