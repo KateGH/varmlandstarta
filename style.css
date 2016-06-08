@@ -91,11 +91,11 @@ p::first-letter, h3::first-letter{
 aside{
     float: left;
     width: 25%;
-    height: 850px;
+    height: 1000px;
     min-height: 50px;
     color: saddlebrown;
     padding-top: 15px;
-    padding-left: 100px;
+    padding-left: 50px;
     padding-right: 35px;
     background-color: #FAC2AB;
 }
@@ -110,20 +110,25 @@ aside .myStars img{
     font-weight: bold;    
 }
 
-.imgR.home img{
-    float: right;
-    width: 220px;
-    height: 220px;
+aside img{
+    width:235px;
+    height:250px;
     border-radius:15px;
     box-shadow:2px 2px 4px gray;
 }
 
-.imgL.home img{
-    float: left;
-    width:220px;
-    height:220px;
+.box{
+    height: 200px;
+}
+
+
+article.home img{
+    width: 220px;
+    height: 200px;
+    margin: 1px;
     border-radius:15px;
     box-shadow:2px 2px 4px gray;
+    margin: 0px 10px 10px 10px;
 }
 
 footer{
