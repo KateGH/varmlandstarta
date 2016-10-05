@@ -20,11 +20,11 @@ for(var i=0;i<ingredients.length;i++){
 function calculateAmount(){
     portion = document.getElementById("portion").value;
       
-    for(var i=0;i<ingredients.length;i++){
+    for(var i=0;i<(ingredients.length)-1;i++){
         myAmount[i] = portion*ingredients[i];
         console.log("myAmount" + i + ": " + myAmount[i]);  
         
-        document.getElementsByTagName("span")[i].innerHTML = myAmount[i];        
+        document.getElementsByClassName("amount")[i].innerHTML = myAmount[i];        
     }
     
     console.log(myAmount);
