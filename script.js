@@ -31,182 +31,176 @@ function calculateAmount(){
 }
 
 
+$(document).ready(function(){
 // nr.01
-$("#star01").mouseover(function(){  
-    
-    $("#star01").attr("src", "image/s07.png");
-});
-
-$("#star01").mouseout(function(){
-    
-    $("#star01").attr("src", "image/s05.png");
-});
-
-$("#star01").click(function(){
-    
-    $("#myvote").html(1);
-    
-    $("#star01").off("mouseout");
-    $("#star01").on("mouseover");
-    
-    for(var j=2;j<=5;j++){
-        $("#star0"+j).off("mouseout");
-        $("#star0"+j).off("mouseover");
+$("#star01").on({
+   
+    mouseenter: function(){
+        $(this).attr("src", "image/s07.png");
+    },
+    mouseleave: function(){
+        $(this).attr("src", "image/s05.png");
+    },
+    click: function(){
+        $("#myvote").html(1); //คำสั่งให้ update ค่าใน html แทนคำสั่ง document.getElementById().innerhtml ซึ่งเป็นการสั่งผ่าน DOM ไม่ใช่ jQuery ที่สั้นกว่า ex.document.getElementById("myvote").innerHTML = "1";
+        
+//      $("#star01").off("mouseleave"); // take away this to make mouseleave active still after click 
+        $("#star01").on("mouseenter");     
     }
-    
 });
-
-
-
+    
+    
 // nr.02
-$("#star02").mouseover(function(){
+$("#star02").on({
     
-    for(var i=1;i<=2;i++){
-        $("#star0"+i).attr("src", "image/s07.png");
-    }
-    
+    mouseenter: function(){
+        for(var i=1;i<=2;i++){
+            $("#star0"+i).attr("src", "image/s07.png");
+        }        
+    },
+    mouseleave: function(){
+        for(var i=1;i<=2;i++){
+            $("#star0"+i).attr("src", "image/s05.png");
+        }
+    },
+    click: function(){
+        $("#myvote").html(2);
+        
+        for(var i=1;i<=2;i++){
+            $("#star0"+i).on("mouseenter");
+        }
+    } 
 });
-
-$("#star02").mouseout(function(){
-    
-    for(var i=1;i<=2;i++){
-        $("#star0"+i).attr("src", "image/s05.png");
-    }
-    
-});
-
-$("#star02").click(function(){
-    
-    $("#myvote").html(2);
-    
-    for(var i=1;i<=2;i++){
-        $("#star0"+i).off("mouseout");
-        $("#star0"+i).on("mouseover");    
-    }
-    
-    
-    for(var j=3;j<=5;j++){
-        $("#star0"+j).off("mouseout");
-        $("#star0"+j).off("mouseover");
-    }
-    
-});
-
 
  
 // nr.03
-$("#star03").mouseover(function(){
+$("#star03").on({
     
-    for(var i=1;i<=3;i++){
-        $("#star0"+i).attr("src", "image/s07.png");
+    mouseenter: function(){
+         for(var i=1;i<=3;i++){
+            $("#star0"+i).attr("src", "image/s07.png");
+      }
+    },
+    mouseleave: function(){
+        for(var i=1;i<=3;i++){
+            $("#star0"+i).attr("src", "image/s05.png");
+        }
+    },
+    click: function(){
+        $("#myvote").html(3);
+    
+        for(var i=1;i<=3;i++){
+            $("#star0"+i).on("mouseenter");    
+        }
     }
 });
 
-$("#star03").mouseout(function(){
-    
-     for(var i=1;i<=3;i++){
-        $("#star0"+i).attr("src", "image/s05.png");
-    }
-});
 
-$("#star03").click(function(){
-    
-    $("#myvote").html(3);
-    
-    for(var i=1;i<=3;i++){
-        $("#star0"+i).off("mouseout");
-        $("#star0"+i).on("mouseover");    
-    }
-    
-    for(var j=4;j<=5;j++){
-        $("#star0"+j).off("mouseout");
-        $("#star0"+j).off("mouseover");
-    }
-    
-});
-    
-    
 // nr.04
-$("#star04").mouseover(function(){
+$("#star04").on({
     
-    for(var i=1;i<=4;i++){
+    mouseenter: function(){
+        for(var i=1;i<=4;i++){
         $("#star0"+i).attr("src", "image/s07.png");
-    }
-});
-
-$("#star04").mouseout(function(){
-    
-    for(var i=1;i<=4;i++){
+        }
+    },
+    mouseleave: function(){
+        for(var i=1;i<=4;i++){
         $("#star0"+i).attr("src", "image/s05.png");
+        }
+    },
+    click: function(){
+        $("#myvote").html(4);
+    
+        for(var i=1;i<=4;i++){
+            $("#star0"+i).on("mouseenter");    
+        }
     }
 });
-
-$("#star04").click(function(){
-    
-    $("#myvote").html(4);
-    
-    for(var i=1;i<=4;i++){
-        $("#star0"+i).off("mouseout");
-        $("#star0"+i).on("mouseover");    
-    }
-    
-    $("#star05").off("mouseout");
-    $("#star05").off("mouseover");
-    
-});    
-    
  
 
 // nr.05
-$("#star05").mouseover(function(){
+$("#star05").on({
     
-   for(var i=1;i<=5;i++){
+    mouseenter: function(){
+        for(var i=1;i<=5;i++){
         $("#star0"+i).attr("src", "image/s07.png");
-    }
-});
-
-$("#star05").mouseout(function(){
-    
-  for(var i=1;i<=5;i++){
+        }
+    },
+    mouseleave: function(){
+        for(var i=1;i<=5;i++){
         $("#star0"+i).attr("src", "image/s05.png");
-    }
+        }
+    },
+    click: function(){
+        $("#myvote").html(5);
+        
+        for(var i=1;i<=5;i++){           
+            $("#atat0"+i).on("mouseenter");
+        }
+    }  
 });
+    
 
-$("#star05").click(function(){
+
+if(typeof(Storage) != undefined){
     
-    $("#myvote").html(5);
+    var url = "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta";
     
-  for(var i=1;i<=5;i++){
-        $("#star0"+i).off("mouseout");
-        $("#star0"+i).on("mouseover");    
-    }    
+    var jsonString = JSON.stringify(url); // Obj => String
+    
+    localStorage.setItem("votesKey", jsonString);
+    
+    var jsonObjLocalData = JSON.parse(localStorage.getItem("votesKey")); // JSON string => Obj
+    
+    $.each(jsonObjLocalData, function(key, value){
+        console.log(key + ' = ' + value);
+    });
+    
+    
+
+//    document.getElementById("votes").innerHTML = localStorage.getItem("votesKey");
+//} else {
+//    document.getElementById("votes").innerHTML = "Sorry, you browser does not support web storage"
+}
+    
+    
+    
+    
+
 }); 
 
 
-// here to fix vote function
 
-function loadPage(){
+// Here how to fix vote function !!
+
+function loadDoc(){ 
 $.ajax({
-  url:"https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta&rating=5",
-  type: "GET",
-  success: function loadJSON(){
-      var data_file = "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta";
-      var http_request = new XMLHttpRequest();
-      
-      http_request.open("GET", data_file, true);
-      http_request.send();
-      
-      http_request.onreadystatechange = function(){
-          if(http_request.readyState == 4 && http_request.status == 200){
-              var jsonObj = JSON.parse(http_request.responseText);
-              $("#votes").html(jsonObj.votes);
-              $("#rating").html(jsonObj.rating.toFixed(2));
-          }
-      }
-      
-  }
+url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta&rating=5", 
+type: "GET",
+//data: [],
+//dataType: 'json',
     
-} );
+success: function loadJSON(){
+    
+    var url = "https://edu.oscarb.se/sjk15/api/recipe/?api_key=f2491aa18658377a&recipe=varmlandtarta";
+    var http_request = new XMLHttpRequest();
+    
+    http_request.onreadystatechange = function(){
+    
+        if(http_request.readyState == 4 && http_request.status == 200){
+       
+        var jsonObj = JSON.parse(http_request.responseText);
+//    $("#myvote").html(i); // move to each .click(function())
+        $("#votes").html(jsonObj.votes);
+        $("#rating").html(jsonObj.rating.toFixed(2)); // fix 2 digits figure        
+        }
+    };
+    
+    http_request.open("GET", url, true);
+    http_request.send();
+}       
+});    
     
 }
 
